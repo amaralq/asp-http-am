@@ -3,27 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre o Projeto</title>
+    <title>Códigos HTTP e Conclusão</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <p class="instituicao">ETE Professor Paulo Freire</p>
-        <h1>Sobre a Disciplina</h1>
+        <p class="instituicao">Escola Técnica de Tecnologia</p>
+        <h1>Códigos de Status, URL e Conclusão</h1>
+        <div class="meta-info">
+            <p><strong>Aluno:</strong> Kaíque Amaral de Queiros</p>
+            <p><strong>Aluno:</strong> Joao Vitor Mendes</p>
+            <p><strong>Disciplina:</strong> Administração de Sistemas ProprietÁrios</p>
+        </div>
     </header>
 
     <main>
-        <section class="conteudo">
-            <h2>Objetivos do Estudo</h2>
+        <section class="card">
+            <h2>5. Códigos de Status: 200 e 404</h2>
+            <p>Quando o servidor responde a uma requisição, ele envia um código de status numérico:</p>
+            <table class="tabela-status">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Significado</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>200 OK</strong></td>
+                        <td>Sucesso</td>
+                        <td>A requisição foi aceita e o recurso foi entregue corretamente.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>404 Not Found</strong></td>
+                        <td>Não Encontrado</td>
+                        <td>O servidor respondeu, mas o arquivo/página solicitado não existe.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>6. Exemplo de URL</h2>
+            <p>URL significa <em>Uniform Resource Locator</em>. Exemplo:</p>
+            <p class="url-destaque">https://www.exemplo.com.br/produtos/index.html</p>
+            <ul>
+                <li><strong>https://</strong> - Protocolo de comunicação seguro.</li>
+                <li><strong>www.exemplo.com.br</strong> - Domínio / Endereço do Servidor.</li>
+                <li><strong>/produtos/</strong> - Diretório / Caminho da pasta.</li>
+                <li><strong>index.html</strong> - Nome do arquivo solicitado.</li>
+            </ul>
+        </section>
+
+        <section class="card destaque">
+            <h2>7. Conclusão</h2>
             <p>
-                Esta página foi criada como parte prática do aprendizado sobre hospedagem de sites estáticos utilizando o 
-                <strong>GitHub Pages</strong> e controle de versão com <strong>Git</strong>.
+                O funcionamento da Web depende da interação harmoniosa entre clientes e servidores através do protocolo HTTP. Compreender como os métodos como GET funcionam, o papel de servidores web como o IIS e a interpretação dos códigos de resposta (como 200 e 404) é essencial para qualquer administrador de sistemas web.
             </p>
         </section>
 
         <nav class="navegacao">
-            <a href="index.html" class="botao">&larr; Voltar para o Início</a>
+            <a href="index.html" class="botao">&larr; Voltar para a Página Principal</a>
         </nav>
     </main>
 
