@@ -162,3 +162,75 @@ body {
     color: var(--text-muted);
     font-size: 1rem;
 }
+
+/* --- ESTILOS PARA OS CARDS EXPANSÍVEIS --- */
+
+.card-expandable {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* Esconde a setinha padrão do HTML */
+.card-expandable summary::-webkit-details-marker {
+    display: none;
+}
+
+.card-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    list-style: none; /* Esconde a seta no Firefox */
+    outline: none;
+}
+
+/* Imagem do Console */
+.console-img {
+    width: 100%;
+    max-width: 220px;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card-expandable:hover .console-img {
+    transform: scale(1.05); /* Efeito de zoom leve ao passar o mouse */
+}
+
+/* Dica de clique abaixo do título */
+.click-hint {
+    font-size: 0.75rem;
+    color: var(--tuf-yellow);
+    margin-top: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Conteúdo que aparece após o clique */
+.card-content {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+/* Animação para o conteúdo surgir suavemente */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
