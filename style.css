@@ -1,63 +1,144 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de consoles | Console Vault</title>
-    <!-- MANTENHA O LINK DO CSS AQUI PARA MANTER O DESIGN -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* VARIÁVEIS DE CORES ASUS TUF */
+:root {
+    --bg-dark: #0f1115;
+    --bg-card: #181c24;
+    --tuf-yellow: #ffb800;
+    --tuf-orange: #ff5500;
+    --text-main: #f0f2f5;
+    --text-muted: #8c96a6;
+    --border-color: #2a313d;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
+}
 
-    <!-- Header que se mantém consistente -->
-    <header class="navbar">
-        <div class="logo">CONSOLE<span>VAULT</span></div>
-        <nav>
-            <a href="index.html">VOLTAR AO INÍCIO</a>
-        </nav>
-    </header>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Conteúdo da página -->
-    <main style="padding: 50px 8%;">
-        <h1 style="color: var(--tuf-yellow); font-family: 'Orbitron', sans-serif;">CATÁLOGO DE CONSOLES</h1>
-        <p style="color: #fff; margin-top: 20px;">Aqui você encontrará detalhamentos sobre diversos consoles</p>
-        
-        <!-- Exemplo de como usar os estilos que já criamos -->
-        <div class="features" style="margin-top: 40px;">
-            <div class="card">
-                <details class="card card-expandable">
-    <section class="features">
-        <!-- AQUI VAI O NOME DA IMAGEM QUE VOCÊ SUBIU -->
-        <input type="checkbox" id="switch" class="card-toggle">
-    <label for="switch" class="card card-interactive">
-        <img src="switch.png" alt="Nintendo Switch">
-        <h3>NINTENDO SWITCH</h3>
-        <span class="click-hint">▲ Clique para expandir</span>
-        <div class="card-details">
-            <p><strong>Exclusivos:</strong> Zelda: Tears of the Kingdom, Super Mario Odyssey, Pokémon.</p>
-            <p><strong>Detalhes:</strong> Console híbrido que permite jogar tanto na TV quanto em modo portátil.</p>
-        </div>
-    </label>  
-             <input type="checkbox" id="ps5" class="card-toggle">
-    <label for="ps5" class="card card-interactive">
-        <img src="ps5.png" alt="PlayStation 5">
-        <h3>PLAYSTATION 5</h3>
-        <span class="click-hint">▲ Clique para expandir</span>
-        <div class="card-details">
-            <p><strong>Exclusivos:</strong> God of War Ragnarök, Marvel's Spider-Man 2, Demon's Souls.</p>
-            <p><strong>Detalhes:</strong> Foco em gráficos de nova geração com Ray Tracing e SSD ultra-rápido.</p>
-        </div>
-    </label>
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
 
-        <input type="checkbox" id="xbox" class="card-toggle">
-    <label for="xbox" class="card card-interactive">
-        <img src="xbox.png" alt="Xbox Series X">
-        <h3>XBOX SERIES X</h3>
-        <span class="click-hint">▲ Clique para expandir</span>
-        <div class="card-details">
-            <p><strong>Exclusivos:</strong> Halo Infinite, Forza Horizon 5, Starfield.</p>
-            <p><strong>Detalhes:</strong> O console mais poderoso da Microsoft com 12 TFLOPS e suporte a Game Pass.</p>
-        </div>
-    </label>
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(15, 17, 21, 0.9);
+    border-bottom: 2px solid var(--border-color);
+}
 
-</section>
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.logo span {
+    color: var(--tuf-yellow);
+}
+
+.navbar nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* GRID DOS CONSOLES (LADO A LADO) */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+
+/* OCULTAR CHECKBOX */
+.card-toggle {
+    display: none;
+}
+
+/* DESIGN DOS CARDS */
+.card-interactive {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--tuf-yellow);
+    padding: 25px;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.card-interactive:hover {
+    border-color: var(--tuf-yellow);
+    transform: translateY(-3px);
+}
+
+/* IMAGEM E TITULO */
+.console-img {
+    width: 100%;
+    max-width: 180px;
+    height: 130px;
+    object-fit: contain;
+    margin: 0 auto 15px auto;
+    display: block;
+}
+
+.card-interactive h3 {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+    font-size: 1.1rem;
+}
+
+.click-hint {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--tuf-yellow);
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ÁREA DE DETALHES (INICIALMENTE ESCONDIDA) */
+.card-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    text-align: left;
+}
+
+.card-details p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+/* QUANDO CLICAR (EXPANDIR CARD) */
+.card-toggle:checked + .card-interactive {
+    transform: scale(1.04);
+    border-color: var(--tuf-yellow);
+    box-shadow: 0 0 20px rgba(255, 184, 0, 0.2);
+}
+
+.card-toggle:checked + .card-interactive .card-details {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.card-toggle:checked + .card-interactive .click-hint {
+    display: none;
+}
