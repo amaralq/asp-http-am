@@ -107,3 +107,58 @@ body {
     margin-bottom: 30px;
 }
 
+/* BOTAO ESTILO CHANFRADO INDUSTRIAL */
+.btn-primary {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--tuf-yellow);
+    color: #000;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    /* Cantos cortados no estilo TUF */
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: var(--tuf-orange);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* FEATURES GRID */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px 8%;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    position: relative;
+    /* Detalhe de linha amarela na lateral do card */
+    border-left: 4px solid var(--tuf-yellow);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--tuf-yellow);
+}
+
+.card h3 {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
