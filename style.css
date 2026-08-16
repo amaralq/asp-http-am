@@ -163,74 +163,71 @@ body {
     font-size: 1rem;
 }
 
-/* --- ESTILOS PARA OS CARDS EXPANSÍVEIS --- */
+/* --- CARDS INTERATIVOS COM EXPANSÃO (TUF GAMING STYLE) --- */
 
-.card-expandable {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    overflow: hidden;
-}
-
-/* Esconde a setinha padrão do HTML */
-.card-expandable summary::-webkit-details-marker {
+/* Esconde o checkbox real */
+.card-toggle {
     display: none;
 }
 
-.card-summary {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    list-style: none; /* Esconde a seta no Firefox */
-    outline: none;
+/* Ajuste no card para aceitar clique */
+.card-interactive {
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Imagem do Console */
-.console-img {
+.card-interactive img {
     width: 100%;
     max-width: 220px;
     height: 140px;
     object-fit: contain;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto 15px auto;
 }
 
-.card-expandable:hover .console-img {
-    transform: scale(1.05); /* Efeito de zoom leve ao passar o mouse */
+.card-interactive h3 {
+    text-align: center;
 }
 
-/* Dica de clique abaixo do título */
+/* Texto de dica */
 .click-hint {
-    font-size: 0.75rem;
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
     color: var(--tuf-yellow);
-    margin-top: 5px;
-    letter-spacing: 1px;
+    margin-top: 8px;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Conteúdo que aparece após o clique */
-.card-content {
-    margin-top: 20px;
+/* Área de detalhes escondida por padrão */
+.card-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    border-top: 1px solid transparent;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* QUANDO O CHECKBOX ESTIVER MARCADO (CARD CLICADO) */
+.card-toggle:checked + .card-interactive {
+    transform: scale(1.03);
+    border-color: var(--tuf-yellow);
+    box-shadow: 0 0 15px rgba(255, 184, 0, 0.2);
+}
+
+.card-toggle:checked + .card-interactive .card-details {
+    max-height: 300px; /* Altura suficiente para mostrar os detalhes */
+    opacity: 1;
+    margin-top: 15px;
     padding-top: 15px;
-    border-top: 1px solid var(--border-color);
-    animation: fadeIn 0.4s ease-in-out;
+    border-top-color: var(--border-color);
 }
 
-.card-content p {
-    font-size: 0.95rem;
-    margin-bottom: 8px;
-    color: var(--text-main);
+.card-toggle:checked + .card-interactive .click-hint {
+    display: none; /* Esconde a dica de clique quando aberto */
 }
-
-/* Animação para o conteúdo surgir suavemente */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
