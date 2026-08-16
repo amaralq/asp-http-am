@@ -1,4 +1,4 @@
-/* RESET E VARIÁVEIS DE CORES TUF GAMING */
+/* VARIÁVEIS DE CORES ASUS TUF */
 :root {
     --bg-dark: #0f1115;
     --bg-card: #181c24;
@@ -22,8 +22,6 @@ body {
     color: var(--text-main);
     font-family: var(--font-body);
     line-height: 1.6;
-    overflow-x: hidden;
-    /* Padrão de fundo em grade/cyberpunk */
     background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
                       linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 30px 30px;
@@ -37,17 +35,12 @@ body {
     padding: 20px 8%;
     background-color: rgba(15, 17, 21, 0.9);
     border-bottom: 2px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(10px);
 }
 
 .logo {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 900;
-    letter-spacing: 2px;
 }
 
 .logo span {
@@ -58,176 +51,94 @@ body {
     color: var(--text-main);
     text-decoration: none;
     font-weight: 700;
-    margin-left: 20px;
-    letter-spacing: 1px;
-    transition: color 0.3s;
 }
 
-.navbar nav a:hover, .navbar nav a.active {
-    color: var(--tuf-yellow);
-}
-
-/* HERO SECTION */
-.hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    padding: 0 8%;
-    position: relative;
-}
-
-.hero-content {
-    max-width: 650px;
-}
-
-.badge {
-    background-color: rgba(255, 184, 0, 0.1);
-    color: var(--tuf-yellow);
-    border: 1px solid var(--tuf-yellow);
-    padding: 4px 12px;
-    font-family: var(--font-heading);
-    font-size: 0.8rem;
-    letter-spacing: 1.5px;
-    display: inline-block;
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    margin-bottom: 30px;
-}
-
-/* BOTAO ESTILO CHANFRADO INDUSTRIAL */
-.btn-primary {
-    display: inline-block;
-    padding: 14px 32px;
-    background: var(--tuf-yellow);
-    color: #000;
-    font-family: var(--font-heading);
-    font-weight: 900;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 1px;
-    /* Cantos cortados no estilo TUF */
-    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-    transition: all 0.2s ease-in-out;
-}
-
-.btn-primary:hover {
-    background: var(--tuf-orange);
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-/* FEATURES GRID */
+/* GRID DOS CONSOLES (LADO A LADO) */
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 40px 8%;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    align-items: start;
 }
 
-.card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 25px;
-    position: relative;
-    /* Detalhe de linha amarela na lateral do card */
-    border-left: 4px solid var(--tuf-yellow);
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: var(--tuf-yellow);
-}
-
-.card h3 {
-    font-family: var(--font-heading);
-    color: var(--text-main);
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: var(--text-muted);
-    font-size: 1rem;
-}
-
-/* --- CARDS INTERATIVOS COM EXPANSÃO (TUF GAMING STYLE) --- */
-
-/* Esconde o checkbox real */
+/* OCULTAR CHECKBOX */
 .card-toggle {
     display: none;
 }
 
-/* Ajuste no card para aceitar clique */
+/* DESIGN DOS CARDS */
 .card-interactive {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--tuf-yellow);
+    padding: 25px;
     display: block;
     cursor: pointer;
     user-select: none;
     transition: all 0.3s ease-in-out;
+    text-align: center;
 }
 
-.card-interactive img {
+.card-interactive:hover {
+    border-color: var(--tuf-yellow);
+    transform: translateY(-3px);
+}
+
+/* IMAGEM E TITULO */
+.console-img {
     width: 100%;
-    max-width: 220px;
-    height: 140px;
+    max-width: 180px;
+    height: 130px;
     object-fit: contain;
-    display: block;
     margin: 0 auto 15px auto;
+    display: block;
 }
 
 .card-interactive h3 {
-    text-align: center;
+    font-family: var(--font-heading);
+    color: var(--text-main);
+    font-size: 1.1rem;
 }
 
-/* Texto de dica */
 .click-hint {
     display: block;
-    text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--tuf-yellow);
     margin-top: 8px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Área de detalhes escondida por padrão */
+/* ÁREA DE DETALHES (INICIALMENTE ESCONDIDA) */
 .card-details {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition: all 0.4s ease-in-out;
-    border-top: 1px solid transparent;
-    margin-top: 0;
-    padding-top: 0;
+    text-align: left;
 }
 
-/* QUANDO O CHECKBOX ESTIVER MARCADO (CARD CLICADO) */
+.card-details p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+/* QUANDO CLICAR (EXPANDIR CARD) */
 .card-toggle:checked + .card-interactive {
-    transform: scale(1.03);
+    transform: scale(1.04);
     border-color: var(--tuf-yellow);
-    box-shadow: 0 0 15px rgba(255, 184, 0, 0.2);
+    box-shadow: 0 0 20px rgba(255, 184, 0, 0.2);
 }
 
 .card-toggle:checked + .card-interactive .card-details {
-    max-height: 300px; /* Altura suficiente para mostrar os detalhes */
+    max-height: 300px;
     opacity: 1;
     margin-top: 15px;
     padding-top: 15px;
-    border-top-color: var(--border-color);
+    border-top: 1px solid var(--border-color);
 }
 
 .card-toggle:checked + .card-interactive .click-hint {
-    display: none; /* Esconde a dica de clique quando aberto */
+    display: none;
 }
